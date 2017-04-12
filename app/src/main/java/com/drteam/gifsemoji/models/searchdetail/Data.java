@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Data {
 
+
     @SerializedName("type")
     @Expose
     private String type;

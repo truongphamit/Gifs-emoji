@@ -4,8 +4,7 @@ package com.drteam.gifsemoji.models.searchdetail;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Original {
-
+public class FixedHeightDownsampled {
 
     @SerializedName("url")
     @Expose
@@ -19,12 +18,12 @@ public class Original {
     @SerializedName("size")
     @Expose
     private String size;
-    @SerializedName("frames")
+    @SerializedName("webp")
     @Expose
-    private String frames;
-    @SerializedName("mp4")
+    private String webp;
+    @SerializedName("webp_size")
     @Expose
-    private String mp4;
+    private String webpSize;
 
     public String getUrl() {
         return url;
@@ -58,20 +57,20 @@ public class Original {
         this.size = size;
     }
 
-    public String getFrames() {
-        return frames;
+    public String getWebp() {
+        return webp;
     }
 
-    public void setFrames(String frames) {
-        this.frames = frames;
+    public void setWebp(String webp) {
+        this.webp = webp;
     }
 
-    public String getMp4() {
-        return mp4;
+    public String getWebpSize() {
+        return webpSize;
     }
 
-    public void setMp4(String mp4) {
-        this.mp4 = mp4;
+    public void setWebpSize(String webpSize) {
+        this.webpSize = webpSize;
     }
 
 }

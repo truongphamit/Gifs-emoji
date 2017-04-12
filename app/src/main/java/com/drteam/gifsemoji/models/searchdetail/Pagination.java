@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Pagination {
 
+
     @SerializedName("total_count")
     @Expose
     private Integer totalCount;

@@ -3,7 +3,6 @@ package com.drteam.gifsemoji.models.searchdetail;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 
 /**
  * Created by CUONG-PH on 4/12/2017.

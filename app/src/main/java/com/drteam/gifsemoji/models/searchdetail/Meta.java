@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Meta {
 
+
     @SerializedName("status")
     @Expose
     private Integer status;
