@@ -11,10 +11,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.drteam.gifsemoji.API.GifsApi;
+import com.drteam.gifsemoji.controller.HTTPController;
 import com.drteam.gifsemoji.fragments.TagFragment;
 import com.drteam.gifsemoji.models.Category;
+import com.drteam.gifsemoji.models.searchdetail.SearchResult;
 import com.drteam.gifsemoji.utils.Utils;
 import com.drteam.gifsemoji.views.adapters.PagerAdapter;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,6 +29,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,10 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
         init();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
