@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,5 +71,12 @@ public class TagFragment extends Fragment {
         TagsAdapter adapter = new TagsAdapter(activity, category.getSub());
         rv_tags.setAdapter(adapter);
         rv_tags.setLayoutManager(new GridLayoutManager(activity, 2));
+
+        adapter.setOnItemClickListener(new TagsAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+
+            }
+        });
     }
 }

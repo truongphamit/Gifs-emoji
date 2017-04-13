@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Gifs-emoji.iml" filepath="$PROJECT_DIR$/Gifs-emoji.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GifsEmoji.iml" filepath="$PROJECT_DIR$/GifsEmoji.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

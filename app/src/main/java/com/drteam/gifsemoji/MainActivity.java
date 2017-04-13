@@ -12,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.drteam.gifsemoji.API.GifsApi;
+import com.drteam.gifsemoji.API.GifsServices;
 import com.drteam.gifsemoji.controller.HTTPController;
 import com.drteam.gifsemoji.fragments.TagFragment;
 import com.drteam.gifsemoji.models.Category;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewpager;
 
     private List<Category> categories;
+    private GifsServices gifsServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
+        gifsServices = GifsApi.getCoreServices();
+
         categories = loadDataFiles();
 
         List<Fragment> fragments = new ArrayList<>();
@@ -105,5 +109,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return categories;
+    }
+
+    public GifsServices getGifsServices() {
+        return gifsServices;
     }
 }

@@ -58,14 +58,38 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
         return tags.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    /***** Creating OnItemClickListener *****/
+
+    // Define listener member variable
+    private OnItemClickListener listener;
+
+    // Define the listener interface
+    public interface OnItemClickListener {
+        void onItemClick(View itemView, int position);
+    }
+
+    // Define the method that allows the parent activity or fragment to define the listener
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView img;
         public TextView tv_tag;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(final View itemView) {
             super(itemView);
             img = (ImageView) itemView.findViewById(R.id.img);
             tv_tag = (TextView) itemView.findViewById(R.id.tv_tag);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        listener.onItemClick(itemView, getLayoutPosition());
+                    }
+                }
+            });
         }
     }
 }
