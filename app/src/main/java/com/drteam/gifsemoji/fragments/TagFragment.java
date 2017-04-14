@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.drteam.gifsemoji.MainActivity;
 import com.drteam.gifsemoji.R;
 import com.drteam.gifsemoji.models.Category;
+import com.drteam.gifsemoji.utils.Utils;
 import com.drteam.gifsemoji.views.adapters.TagsAdapter;
 
 import java.util.ArrayList;
@@ -67,7 +68,7 @@ public class TagFragment extends Fragment {
         init(category);
     }
 
-    private void init(Category category) {
+    private void init(final Category category) {
         TagsAdapter adapter = new TagsAdapter(activity, category.getSub());
         rv_tags.setAdapter(adapter);
         rv_tags.setLayoutManager(new GridLayoutManager(activity, 2));
@@ -75,7 +76,7 @@ public class TagFragment extends Fragment {
         adapter.setOnItemClickListener(new TagsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int position) {
-
+                Utils.slideFragment(SubTagFragment.newInstance(category.getSub().get(position)), activity.getSupportFragmentManager());
             }
         });
     }
