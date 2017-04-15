@@ -1,4 +1,4 @@
-package com.drteam.gifsemoji;
+package com.drteam.gifsemoji.activities;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.drteam.gifsemoji.API.GifsApi;
 import com.drteam.gifsemoji.API.GifsServices;
+import com.drteam.gifsemoji.R;
 import com.drteam.gifsemoji.controller.HTTPController;
 import com.drteam.gifsemoji.fragments.TagFragment;
 import com.drteam.gifsemoji.models.Category;

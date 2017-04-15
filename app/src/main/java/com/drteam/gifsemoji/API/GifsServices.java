@@ -1,6 +1,7 @@
 package com.drteam.gifsemoji.API;
 
 import com.drteam.gifsemoji.models.randomresult.RandomResult;
+import com.drteam.gifsemoji.models.searchdetail.Data;
 import com.drteam.gifsemoji.models.searchdetail.SearchResult;
 import com.drteam.gifsemoji.models.searchdetail.SearchSingleResult;
 
@@ -31,14 +32,14 @@ public interface GifsServices {
 
     //Gifs
     //tìm kiếm dựa vào từ khóa
-    @GET("v1/gifs/search")
-    Call<SearchResult> getSearchByKeyResult(@Query("q") String searchKey,
-                                            @Query("api_key") String apikey,
-                                            @Query("limit") int limit,
-                                            @Query("offset") int offset,
-                                            @Query("rating") String rating,
-                                            @Query("lang") String lang,
-                                            @Query("fmt") String fmt);
+    @GET(ApiConstants.API_SEARCH_BY_KEYWORD)
+    Call<ApiResponse<List<Data>>> getSearchByKeyResult(@Query("q") String searchKey,
+                                                       @Query("api_key") String apikey,
+                                                       @Query("limit") int limit,
+                                                       @Query("offset") int offset,
+                                                       @Query("rating") String rating,
+                                                       @Query("lang") String lang,
+                                                       @Query("fmt") String fmt);
 
     //ảnh gif trending
     @GET("v1/gifs/trending")

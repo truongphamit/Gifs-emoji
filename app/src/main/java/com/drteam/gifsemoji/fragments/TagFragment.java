@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.drteam.gifsemoji.MainActivity;
+import com.drteam.gifsemoji.activities.MainActivity;
 import com.drteam.gifsemoji.R;
 import com.drteam.gifsemoji.models.Category;
 import com.drteam.gifsemoji.utils.Utils;
