@@ -1,4 +1,4 @@
-package com.drteam.gifsemoji;
+package com.drteam.gifsemoji.activities;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -11,10 +11,16 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.drteam.gifsemoji.API.GifsApi;
+import com.drteam.gifsemoji.API.GifsServices;
+import com.drteam.gifsemoji.R;
+import com.drteam.gifsemoji.controller.HTTPController;
 import com.drteam.gifsemoji.fragments.TagFragment;
 import com.drteam.gifsemoji.models.Category;
+import com.drteam.gifsemoji.models.searchdetail.SearchResult;
 import com.drteam.gifsemoji.utils.Utils;
 import com.drteam.gifsemoji.views.adapters.PagerAdapter;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,6 +31,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewpager;
 
     private List<Category> categories;
+    private GifsServices gifsServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
         init();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -62,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
+        gifsServices = GifsApi.getCoreServices();
+
         categories = loadDataFiles();
 
         List<Fragment> fragments = new ArrayList<>();
@@ -99,5 +110,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return categories;
+    }
+
+    public GifsServices getGifsServices() {
+        return gifsServices;
     }
 }

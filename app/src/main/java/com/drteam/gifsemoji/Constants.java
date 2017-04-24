@@ -5,5 +5,6 @@ package com.drteam.gifsemoji;
  */
 
 public class Constants {
-    public static final String BASE_URL_API = "api.giphy.com";
+    public static final String BASE_URL_API = "http://api.giphy.com";
+    public static final String API_KEY = "dc6zaTOxFJmzC";
 }
